@@ -41,30 +41,39 @@ int main(int argc, char *argv[]) {
     threads = atoi(argv[5]);
     sched = atoi(argv[6]);
     iter = atoi(argv[7]);
-    int arr[length];
     struct timeval start, end;
     omp_sched_t kind;
+    double sol=0;
     
-    void omp_set_num_threads(threads);
+    omp_set_num_threads(threads);
     
-    if(sched == 1){
-      kind = omp_sched_static;
-      void omp_set_schedule(kind);
+    if(sched == 2){
+      kind = omp_sched_dynamic;
+      omp_set_schedule(kind, iter);
     }
-    else if(sched == 2){
-      kind = omp_sched_static;
-      void omp_set_schedule(kind, iter);
+    else {
+      printf("Incorrect scheduling type entered. 1 for static, and 2 for dynamic.\n");
+      return 0;
     }
     
-    gettimeofday(&start, NULL);
-    #pragma omp parallel for schedule(runtime)
-    {
-      for(i=a; i<b; i++){
-        arr[i] = arr[i]*arr[i];
-      }
+    if(sched == 2){
+      gettimeofday(&start, NULL);
+      #pragma omp parallel for schedule(static)
+        for(i=a; i<b; i++){
+          sol+=inte(i, i+1, num, ten);
+        }
+      gettimeofday(&end, NULL);
+      printf("Time: %ld\n", ((end.tv_sec * 1000000 + end.tv_usec)-(start.tv_sec * 1000000 + start.tv_usec)));
     }
-    gettimeofday(&end, NULL);
-    printf("Time: %ld\n", ((end.tv_sec * 1000000 + end.tv_usec)-(start.tv_sec * 1000000 + start.tv_usec)));
+    else {
+      gettimeofday(&start, NULL);
+      #pragma omp parallel for schedule(runtime)
+        for(i=a; i<b; i++){
+          sol+=inte(i, i+1, num, ten);
+        }
+      gettimeofday(&end, NULL);
+      printf("Time: %ld\n", ((end.tv_sec * 1000000 + end.tv_usec)-(start.tv_sec * 1000000 + start.tv_usec)));
+    }
     
   }
   return 0;
