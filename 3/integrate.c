@@ -27,22 +27,20 @@ double inte (int a, int b, int n, int x) {
 }
 
 int main(int argc, char *argv[]) {
-  if(argc != 9) {
+  if(argc != 8) {
     printf("Incorrect number of arguments.\n");
   }
   else {
-    int a, b, num, ten, length, threads, sched, iter, i;
+    int a, b, num, ten, threads, sched, iter, i;
     a = atoi(argv[1]);
     b = atoi(argv[2]);
     num = atoi(argv[3]);
     ten = atoi(argv[4]);
     inte(a, b, num, ten);
     
-    length = atoi(argv[5]);
-    threads = atoi(argv[6]);
-    sched = atoi(argv[7]);
-    iter = atoi(argv[8]);
-    i;
+    threads = atoi(argv[5]);
+    sched = atoi(argv[6]);
+    iter = atoi(argv[7]);
     int arr[length];
     struct timeval start, end;
     omp_sched_t kind;
@@ -61,7 +59,7 @@ int main(int argc, char *argv[]) {
     gettimeofday(&start, NULL);
     #pragma omp parallel for schedule(runtime)
     {
-      for(i=0; i<length; i++){
+      for(i=a; i<b; i++){
         arr[i] = arr[i]*arr[i];
       }
     }
