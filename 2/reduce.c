@@ -30,7 +30,7 @@ int main (int argc, char *argv[]) {
       kind = omp_sched_dynamic;
       omp_set_schedule(kind, iter);
     }
-    else {
+    else if(sched != 1 && sched != 2){
       printf("Incorrect scheduling type entered. 1 for static, and 2 for dynamic.\n");
       return 0;
     }
