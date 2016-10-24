@@ -9,3 +9,26 @@ To compile without errors, you will need to use:
 gcc -fopenmp -o integrate integrate.c -lm
 
 Output from script.sh on Mamba:
+
+0, 10^3, 10^3, 10, 1, dynamic, 1
+Time: 21591
+0, 10^3, 10^3, 1000, 1, dynamic, 1000
+Time: 2243729
+0, 10^3, 10^3, 10, 2, dynamic, 1
+Time: 11041
+0, 10^3, 10^3, 1000, 2, dynamic, 1000
+Time: 1127252
+0, 10^3, 10^3, 10, 4, dynamic, 1
+Time: 6334
+0, 10^3, 10^3, 1000, 4, dynamic, 1000
+Time: 642388
+0, 10^3, 10^3, 10, 8, dynamic, 1
+Time: 6207
+0, 10^3, 10^3, 1000, 8, dynamic, 1000
+Time: 509274
+0, 10^3, 10^3, 10, 16, dynamic, 1
+Time: 5176
+0, 10^3, 10^3, 1000, 16, dynamic, 1000
+Time: 468193
+
+Program would not compute for 10^9 points.
