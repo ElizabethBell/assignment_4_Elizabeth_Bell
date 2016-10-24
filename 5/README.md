@@ -7,3 +7,5 @@ To compile without errors, you will use:
 gcc -fopenmp -o prefix prefix.c
 
 Output from script.sh on Mamba:
+
+Would not compute.
