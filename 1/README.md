@@ -9,43 +9,44 @@ To compile without errors, you will use:
 gcc -fopenmp -o transform transform.c
 
 Output from script.sh on Mamba:
+
 10^8, 1, static, 1
-Time: 1559715
+Time: 1559344
 10^8, 1, dynamic, 1
-Time: 245938
+Time: 245999
 10^8, 1, dynamic, 1000
-Time: 245944
+Time: 246090
 10^8, 1, dynamic, 100000
-Time: 246054
+Time: 247013
 10^8, 2, static, 1
-Time: 1559206
+Time: 4767656
 10^8, 2, dynamic, 1
-Time: 245884
+Time: 129458
 10^8, 2, dynamic, 1000
-Time: 245856
+Time: 123422
 10^8, 2, dynamic, 100000
-Time: 246101
+Time: 123564
 10^8, 4, static, 1
-Time: 1559423
+Time: 4576784
 10^8, 4, dynamic, 1
-Time: 245955
+Time: 71235
 10^8, 4, dynamic, 1000
-Time: 245851
+Time: 71328
 10^8, 4, dynamic, 100000
-Time: 246345
+Time: 71130
 10^8, 8, static, 1
-Time: 1560526
+Time: 4589835
 10^8, 8, dynamic, 1
-Time: 245972
+Time: 68019
 10^8, 8, dynamic, 1000
-Time: 245963
+Time: 69561
 10^8, 8, dynamic, 100000
-Time: 245907
+Time: 70180
 10^8, 16, static, 1
-Time: 1557954
+Time: 4349796
 10^8, 16, dynamic, 1
-Time: 246214
+Time: 87253
 10^8, 16, dynamic, 1000
-Time: 246310
+Time: 68459
 10^8, 16, dynamic, 100000
-Time: 245940
+Time: 68604
